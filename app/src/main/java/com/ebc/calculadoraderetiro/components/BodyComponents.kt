@@ -14,26 +14,25 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import org.w3c.dom.Text
+
 
 @Composable
-fun TitleView(name:String){
-    Text(text=name, fontSize=40.sp)
+fun TitleView(name: String){
+    Text(text = name, fontSize = 40.sp, fontWeight = FontWeight.Bold)
 }
 
 @Composable
 fun Space(){
-    Spacer(modifier=Modifier.height(10.dp))
+    Spacer(modifier = Modifier.height(10.dp))
 }
 
 @Composable
-fun MainButton(name:String, backColor: Color, color:Color, OnClick:() -> Unit){
-    Button(
-        onClick = OnClick,
-        colors = ButtonDefaults.buttonColors(
-            contentColor = color,
-            containerColor = backColor
-        )
-    ) {
-        Text(text=name)
-  }
+fun MainButton(name:String, backColor: Color, color: Color, onClick:() -> Unit){
+    Button(onClick = onClick, colors = ButtonDefaults.buttonColors(
+        contentColor = color,
+        containerColor = backColor
+    ) ) {
+        Text(text = name)
+    }
 }
