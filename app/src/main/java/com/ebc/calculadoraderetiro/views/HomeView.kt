@@ -34,7 +34,6 @@ import com.ebc.calculadoraderetiro.components.TitleBar
 @Composable
 fun HomeView(navController: NavController){
     Scaffold (
-
         topBar={
             CenterAlignedTopAppBar(
                 title = { TitleBar(headerText ="Piensa en grande") },
@@ -51,8 +50,6 @@ fun HomeView(navController: NavController){
 
 @Composable
 fun ContentHomeView(navController: NavController) {
-    val id = 1
-    var nombre by remember { mutableStateOf("") }
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -60,12 +57,12 @@ fun ContentHomeView(navController: NavController) {
     ) {
         TitleView(name = "Comienza a controlar tu futuro")
         Space()
-        Text("Ingresa tu nombre", fontSize = 20.sp)
-        Space()
-        TextField(value = nombre, onValueChange = { nombre = it })
-        Space()
-        MainButton(name = "Calcular Retiro", backColor = Color.Blue, color = Color.White) {
-
+        MainButton(
+            name = "Calcular Retiro",
+            backColor = Color.Blue,
+            color = Color.White
+        ) {
+            navController.navigate("Calculadora")
         }
     }
 }

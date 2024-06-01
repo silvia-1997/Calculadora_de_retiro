@@ -7,8 +7,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.ebc.calculadoraderetiro.ui.theme.CalculadoraDeRetiroTheme
 import com.ebc.calculadoraderetiro.views.HomeView
 import com.ebc.calculadoraderetiro.views.HomeView
+import com.ebc.calculadoraderetiro.views.RetiroView
 
 //se agregara toda la logica de navegacion
 
@@ -20,14 +22,10 @@ fun NavManager () {
             HomeView(navController = navController)
 
         }
-        composable("Calculadora/{id}/?{nombre}",
-            arguments = listOf(
-            navArgument()){
 
-            }
-            ){
-
-        }
+    composable("Calculadora"){
+        RetiroView(navController = navController)
+    }
     }
 }
 
