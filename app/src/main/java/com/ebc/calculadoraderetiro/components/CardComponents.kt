@@ -36,7 +36,7 @@ fun CartaPrincipal(titulo: String, dato: Double, modifier: Modifier) {
     Card(
         modifier = modifier,
         colors = CardDefaults.cardColors(
-            containerColor = Color.Blue
+            containerColor = Color.Black
         )
     ) {
         Column(

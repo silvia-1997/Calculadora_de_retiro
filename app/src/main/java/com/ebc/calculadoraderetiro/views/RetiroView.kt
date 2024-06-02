@@ -44,7 +44,8 @@ fun RetiroView(navController: NavController, viewModel: CalculadoraViewModel) {
             TopAppBar(
                 title = { Text(text = "Calcula tu retiro") },
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
-                    containerColor = Color.Blue
+                    containerColor = Color.Black,
+                    titleContentColor = Color.White,
                 ),
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
@@ -70,7 +71,7 @@ fun ContentRetiroView(paddingValues: PaddingValues, viewModel: CalculadoraViewMo
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(modifier = Modifier.height(10.dp))
-        val imagenAhorro = painterResource(id = R.drawable.puerco)
+        val imagenAhorro = painterResource(id = R.drawable.puerquito)
         Image(
             painter = imagenAhorro,
             contentDescription = "imagenAhorro"
@@ -82,7 +83,7 @@ fun ContentRetiroView(paddingValues: PaddingValues, viewModel: CalculadoraViewMo
             onValueChange = {
                 viewModel.onValue(it, "monto_anual")
             },
-            label = { Text(text = "Monto anual") },
+            label = { Text(text = "Monto anual Ahorrado") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             modifier = Modifier
                 .fillMaxWidth()
@@ -95,7 +96,7 @@ fun ContentRetiroView(paddingValues: PaddingValues, viewModel: CalculadoraViewMo
             onValueChange = {
                 viewModel.onValue(it, "interes")
             },
-            label = { Text(text = "Interes %") },
+            label = { Text(text = "Interes Deseado%") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             modifier = Modifier
                 .fillMaxWidth()
@@ -108,7 +109,7 @@ fun ContentRetiroView(paddingValues: PaddingValues, viewModel: CalculadoraViewMo
             onValueChange = {
                 viewModel.onValue(it, "años")
             },
-            label = { Text(text = "Años") },
+            label = { Text(text = "Años que se ahorrara") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             modifier = Modifier
                 .fillMaxWidth()

@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import com.ebc.calculadoraderetiro.model.CalculadoraState
 import kotlin.math.pow
 
-class CalculadoraViewModel: ViewModel() {
+class CalculadoraViewModel : ViewModel() {
     var state by mutableStateOf(CalculadoraState())
         private set
 
@@ -24,24 +24,18 @@ class CalculadoraViewModel: ViewModel() {
         val interes = state.interes
         val años = state.años
 
-        state = if (monto_anual.isNotEmpty() && interes.isNotEmpty() && años.isNotEmpty()) {
-            try {
-                val montoAnualDouble = monto_anual.toDouble()
-                val interesDouble = interes.toDouble()
-                val añosDouble = años.toDouble()
+        val montoAnualDouble = monto_anual.toDoubleOrNull()
+        val interesDouble = interes.toDoubleOrNull()
+        val añosDouble = años.toDoubleOrNull()
 
-                state.copy(
-                    monto_ahorrado = calcularMontoAhorrado(montoAnualDouble, añosDouble),
-                    monto_retiro = calcularMontoFinal(montoAnualDouble, interesDouble, añosDouble),
-                    mostrarAlerta = false
-                )
-            } catch (e: NumberFormatException) {
-                state.copy(
-                    mostrarAlerta = true
-                )
-            }
+        if (montoAnualDouble != null && interesDouble != null && añosDouble != null) {
+            state = state.copy(
+                monto_ahorrado = calcularMontoAhorrado(montoAnualDouble, añosDouble),
+                monto_retiro = calcularMontoFinal(montoAnualDouble, interesDouble, añosDouble),
+                mostrarAlerta = false
+            )
         } else {
-            state.copy(
+            state = state.copy(
                 mostrarAlerta = true
             )
         }
@@ -55,5 +49,3 @@ class CalculadoraViewModel: ViewModel() {
         return monto_anual * ((1 + interes).pow(años))
     }
 }
-
-
