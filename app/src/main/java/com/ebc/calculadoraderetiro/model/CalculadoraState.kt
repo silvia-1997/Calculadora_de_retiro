@@ -1,6 +1,6 @@
 package com.ebc.calculadoraderetiro.model
 
-data class CalculadoraSate(
+data class CalculadoraState(
     val monto_anual:String="",
     val interes:String="",
     val años:String="",

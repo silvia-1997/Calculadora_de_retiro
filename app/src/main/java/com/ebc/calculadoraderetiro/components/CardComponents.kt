@@ -36,7 +36,7 @@ fun CartaPrincipal(titulo: String, dato: Double, modifier: Modifier) {
     Card(
         modifier = modifier,
         colors = CardDefaults.cardColors(
-            containerColor = Color.LightGray
+            containerColor = Color.Blue
         )
     ) {
         Column(
@@ -44,8 +44,8 @@ fun CartaPrincipal(titulo: String, dato: Double, modifier: Modifier) {
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.padding(15.dp)
         ) {
-            Text(text = titulo, color = Color.Black, fontSize = 20.sp)
-            Text(text = "$$dato",  color = Color.Black, fontSize = 25.sp)
+            Text(text = titulo, color = Color.White, fontSize = 20.sp)
+            Text(text = "$$dato",  color = Color.White, fontSize = 25.sp)
         }
     }
 }
