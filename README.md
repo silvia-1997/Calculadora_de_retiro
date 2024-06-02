@@ -1,20 +1,28 @@
-Calculadora de Retiro
+All Around Cake Maker App
 
-La Calculadora de Retiro es una aplicación que te ayuda a planificar y calcular tus ahorros para la jubilación. Permite a los usuarios ingresar datos como su ingreso anual, tasa de interés y años de trabajo para calcular cuánto necesitarán ahorrar para mantener su nivel de vida deseado durante la jubilación.
+Description
 
-Características
+All Around Cake Maker is an Android application developed in Kotlin using Jetpack Compose. The app provides a delightful experience for users to discover and create the best cupcakes.
 
-Calcula el monto total ahorrado necesario para la jubilación.
-Calcula el monto final de retiro basado en el ingreso anual, la tasa de interés y los años de trabajo.
-Proporciona alertas cuando se ingresan datos inválidos o faltantes.
-Tecnologías Utilizadas
+Features
 
-Kotlin: Lenguaje de programación utilizado para el desarrollo de la aplicación.
-Jetpack Compose: Biblioteca de UI moderna utilizada para crear interfaces de usuario de manera declarativa.
-Android Jetpack: Conjunto de herramientas y bibliotecas de soporte para el desarrollo de aplicaciones Android.
-ViewModel: Componente de arquitectura utilizado para manejar los datos relacionados con la interfaz de usuario y la lógica de negocio.
-Instalación
+Interactive Onboarding: Guides users through the features of the app.
+Cupcake Creation Wizard: Step-by-step process to create a custom cupcake.
+Order Summary: Review and confirm your cupcake order.
+Navigation Management: Seamless navigation between different screens of the app.
+Getting Started
 
-Clona este repositorio en tu máquina local.
-Abre el proyecto en Android Studio.
-Ejecuta la aplicación en un emulador o dispositivo Android.
+Prerequisites
+
+Android Studio Jellyfish | 2023.3.1 Patch 1 or later
+JDK 11
+Android SDK
+Installation
+
+Clone the repo: git clone https://github.com/jcarocota/AllAroundCakeMakerApp.git
+Open the project in Android Studio
+Run the app on an emulator or a real device
+Usage
+
+The app starts with a splash screen followed by an onboarding screen. After the onboarding process, users can start creating their custom cupcake by following the steps in the cupcake creation wizard. Once the cupcake is created, users can review their order in the order summary screen.
+
